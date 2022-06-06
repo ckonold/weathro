@@ -29,8 +29,10 @@ function App() {
       let loc = await getLocation();
       let w = await getWeather(loc.lat, loc.lon);
       setWeather(w);
-      localStorage.setItem("weather", weather);
+      localStorage.setItem("weather", JSON.stringify(w));
       console.log("Storage set!");
+    }else{
+      setWeather(JSON.parse(localStorage.getItem("weather")))
     }
   };
   useEffect(() => {
