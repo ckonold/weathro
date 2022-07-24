@@ -1,6 +1,9 @@
 import React from "react";
 import "./App.css";
 import { useState, useEffect } from "react";
+import Forecast from "./components/Forecast";
+
+
 function App() {
   const [weather, setWeather] = useState();
   const [units, setUnits] = useState("metric");
@@ -42,12 +45,22 @@ function App() {
   function r() {
     console.log(weather);
   }
-
-  return (
+if(!weather){
+  return(
+    <div>
+      <h1>Loading..</h1>
+    </div>
+  )
+}else{
+    return (
     <div className="App">
+      <Forecast list = {weather.list} city = {weather.city}/>
       <button onClick={r}>Console log</button>
+
     </div>
   );
+}
+
 }
 
 export default App;

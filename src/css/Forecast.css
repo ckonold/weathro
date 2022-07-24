@@ -1,0 +1,12 @@
+.Forecast{
+  display: flex;
+  flex-direction: column;
+}
+
+.Days{
+  display: flex;
+  justify-content: space-between;
+  align-self: center;
+  flex-direction: row;
+}
+
